@@ -42,17 +42,20 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 ```
 
 ## use as no-sudoer [link](https://cloudyuga.guru/blogs/manage-docker-as-non-root-user/)
+`sudo groupadd docker` 
+`sudo usermod -aG docker ray`
+`su - ray`
 
 ## uses 101
 
-sudo docker run hello-world # ... descarga
-sudo docker images
-sudo docker run hello-world # no descarga (ya en local)
-sudo docker run alpine # ... descarga
-sudo docker images 
-sudo docker ps  ## lista vacia ??
-sudo docker run alpine  ## el comando termina... ??
-sudo docker ps
+docker run hello-world # ... descarga
+docker images
+docker run hello-world # no descarga (ya en local)
+docker run alpine # ... descarga
+docker images 
+docker ps  ## lista vacia ??
+docker run alpine  ## el comando termina... ??
+docker ps
 
 ## no bash?
 
@@ -65,18 +68,20 @@ Un ejemplo de instalacion en alpine [aqui](https://www.baeldung.com/linux/bash-a
 
 ## limpio todas las imagenes
 
-sudo docker prune # no es la api moderna
-sudo docker images
+docker prune # no es la api moderna
+docker images
 ...
-sudo docker rmi -f d2 ...  # ok
-sudo docker rmi -f 05 ...  # ok
+docker rmi -f d2 ...  # ok
+docker rmi -f 05 ...  # ok
 
 // no images
 
 ## instalo ubuntu (:latest) y la lanzo y hablo con su shell
 
-`sudo docker pull ubuntu`
-`sudo docker images`
-`sudo docker run xx` ...  # termina (sudo docker ps -> vacio)
-`sudo docker run -it fd /bin/bash` # -> prompt `root@ce4fa3c2b6c0:/#`
-`sudo docker run -it fd /bin/sh` # -> prompt `#`
+`docker pull ubuntu`
+`docker images`
+`docker run xx` ...  # termina (sudo docker ps -> vacio)
+`docker run -it fd /bin/bash` # -> prompt `root@ce4fa3c2b6c0:/#`
+`docker run -it fd /bin/sh` # -> prompt `#`
+
+
