@@ -1,5 +1,8 @@
 [install](https://docs.docker.com/engine/install/ubuntu/) 
 
+## sheets: https://dockerlabs.collabnix.com/docker/cheatsheet/
+
+got here: https://dockerlabs.collabnix.com/docker/cheatsheet/
 
 ## clean:
 
@@ -7,13 +10,12 @@
 for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
 ```
 
-docker.io 
-docker-doc 
-docker-compose 
-docker-compose-v2 
-podman-docker 
-containerd runc
-
+*docker.io*
+*docker-doc* 
+*docker-compose* 
+*docker-compose-v2* 
+*podman-docker* 
+*containerd runc*
 
 ## setup docker repo
 
@@ -38,6 +40,10 @@ sudo apt-get update
 ```bash
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
+
+## use as no-sudoer [link](https://cloudyuga.guru/blogs/manage-docker-as-non-root-user/)
+
+## uses 101
 
 sudo docker run hello-world # ... descarga
 sudo docker images
