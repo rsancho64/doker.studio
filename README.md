@@ -85,3 +85,57 @@ docker rmi -f 05 ...  # ok
 `docker run -it fd /bin/sh` # -> prompt `#`
 
 
+## instalo contenedores mysql ...
+
+aqui: https://hub.docker.com/_/mysql
+
+lanzo `docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql`   (`:tag` no disponible)
+
+
+
+
+```bash:
+ray@daw1:~$ 
+docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                 NAMES
+0268fc4f2b0b   mysql     "docker-entrypoint.s…"   3 minutes ago    Up 3 minutes    3306/tcp, 33060/tcp   some-mysql
+...
+doker kill 02
+ray@daw1:~$ 
+docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                 NAMES
+```
+
+- Lanzo `docker run --name taustecontainer -it -e MYSQL_ROOT_PASSWORD=tauste -d mysql`
+- Acceso al contenedor: `docker exec -it taustecontainer bash`
+- Acceso al motor mysql dentro del contenedor: `mysql -u root -p`  ( pass: tauste )
+
+mysql> 
+
+## instancio una bd en el contenedor :
+
+ver tb [howto](https://www.inmotionhosting.com/support/server/databases/create-a-mysql-database/) 
+
+**mysql>** :
+
+```sql:
+show databases;
+create database usuarios;
+use usuarios;
+create table usuarios(
+  nombre varchar(20) NOT NULL,
+  dni varchar(20) PRIMARY KEY
+);
+insert into usuarios (nombre, dni) values ("diego",1122);
+insert into usuarios (nombre, dni) values ("marta",2233);
+```
+exit.. exit ...
+
+```bash:
+docker stop taustecontainer
+docker start taustecontainer  
+...
+```
+
+**... tiene persistencia, los datos estan**
+
