@@ -1,3 +1,7 @@
+# docker studio 1 daw
+
+## intro
+
 [install](https://docs.docker.com/engine/install/ubuntu/) 
 
 ## sheets: https://dockerlabs.collabnix.com/docker/cheatsheet/
@@ -6,20 +10,17 @@ got here: https://dockerlabs.collabnix.com/docker/cheatsheet/
 
 ## clean:
 
-```bash
-for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
-```
+`for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done`
 
-*docker.io*
-*docker-doc* 
-*docker-compose* 
-*docker-compose-v2* 
-*podman-docker* 
-*containerd runc*
+? *docker.io*
+? *docker-doc* 
+? *docker-compose*  *docker-compose-v2* 
+? *podman-docker* 
+? *containerd runc*
 
 ## setup docker repo
- q
-```bash
+
+```sh
 # Add Docker's official GPG key:
 sudo apt-get update
 sudo apt-get install ca-certificates curl
@@ -37,16 +38,15 @@ sudo apt-get update
 
 ## latest
 
-```bash
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-```
+`sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
 
 ## use as no-sudoer [link](https://cloudyuga.guru/blogs/manage-docker-as-non-root-user/)
+
 `sudo groupadd docker` 
 `sudo usermod -aG docker ray`
 `su - ray`
 
-## uses 101
+## usos 101
 
 docker run hello-world # ... descarga
 docker images
@@ -66,7 +66,7 @@ Un ejemplo de instalacion en alpine [aqui](https://www.baeldung.com/linux/bash-a
 `docker run -it a3562aa0b991 /bin/sh`    # sh si esta ...
 `/ # apk add --no-cache bash`
 
-## limpio todas las imagenes
+## limpio imagenes ..
 
 docker prune # no es la api moderna
 docker images
@@ -137,5 +137,8 @@ docker start taustecontainer
 ...
 ```
 
-**... tiene persistencia, los datos estan**
+**y tiene persistencia ! (los datos estan)**
 
+## limpio contenedores
+
+`docker container prune`
