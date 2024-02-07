@@ -76,7 +76,7 @@ docker rmi -f 05 ...  # ok
 
 // no images
 
-## instalo ubuntu (:latest) y la lanzo y hablo con su shell
+## instalo ubuntu (:latest) y le doy run y hablo con su shell
 
 `docker pull ubuntu`
 `docker images`
@@ -90,9 +90,6 @@ docker rmi -f 05 ...  # ok
 aqui: https://hub.docker.com/_/mysql
 
 lanzo `docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql`   (`:tag` no disponible)
-
-
-
 
 ```bash:
 ray@daw1:~$ 
@@ -142,3 +139,5 @@ docker start taustecontainer
 ## limpio contenedores
 
 `docker container prune`
+
+
